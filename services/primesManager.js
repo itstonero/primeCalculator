@@ -1,5 +1,5 @@
 
-export function getPrimeNumbers(bucketSize = 10, numberRange = 100)
+function getPrimeNumbers(bucketSize = 10, numberRange = 100)
 {
     let primes = [2];
     let allNumbers = Array.from(Array(numberRange).keys())
@@ -22,7 +22,7 @@ export function getPrimeNumbers(bucketSize = 10, numberRange = 100)
     return primes;
 }
 
-export function extractPrimesMultiples(primes)
+function extractPrimesMultiples(primes)
 {
     let primeMultiplies = primes.map(x => []);
     let primeSize = primes.length;
@@ -38,3 +38,5 @@ export function extractPrimesMultiples(primes)
 
     return primeMultiplies;
 }
+
+module.exports = { extractPrimesMultiples, getPrimeNumbers }

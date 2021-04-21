@@ -1,12 +1,10 @@
-import { extractPrimesMultiples, getPrimeNumbers } from "../services/primesManager";
+const primeService = require("../services/primesManager");
 
-export function generatePrimeMultiples(bucketSize)
+function generatePrimeMultiples(bucketSize)
 {
-    const primes = getPrimeNumbers(bucketSize);
-    const multiples = extractPrimesMultiples(primes)
-    const result = {
-        headers: primes,
-        values: primes.reduce((reducer, prime, index) => ({...reducer, [prime]: multiples[index]}), {})
-    }
-    return result;
+    const primes = primeService.getPrimeNumbers(bucketSize);
+    const multiples = primeService.extractPrimesMultiples(primes)
+    return primes.map((x,i) => ({ header: `${x}`, values: multiples[i]}));
 }
+
+module.exports = { generatePrimeMultiples }
