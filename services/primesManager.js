@@ -8,6 +8,7 @@ function getPrimeNumbers(bucketSize = 10, numberRange = 100)
     {
         if(primes.length >= bucketSize)
         {
+            primes.length = bucketSize;
             break;
         }
 
@@ -16,9 +17,7 @@ function getPrimeNumbers(bucketSize = 10, numberRange = 100)
             primes.push(allNumbers[i]);
         }
     }
-
-    if(primes.length > bucketSize) primes.length = bucketSize;
-
+ 
     return primes;
 }
 
