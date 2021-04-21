@@ -6,6 +6,7 @@ const hbs = require('express-handlebars');
 
 app.set('view engine', 'handlebars');
 app.engine('handlebars', hbs({ layoutsDir: __dirname + '/views/layouts',}));
+app.use(express.static('public'));
 
 app.get('/', require("./routes/primeRouter"));
 

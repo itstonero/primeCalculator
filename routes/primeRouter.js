@@ -11,7 +11,7 @@ router.get('/', (request, response) => {
         }
 
         const primesMultiples = primeController.generatePrimeMultiples(bucketSize * 1);
-        return response.render('main', { layout : 'index', data : primesMultiples });
+        return response.render('main', { layout : 'index', data : primesMultiples, bucketSize });
     }catch(error){
         console.log(error)
         return response.status(400).json({ message: 'Something went wrong'})

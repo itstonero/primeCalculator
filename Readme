@@ -1,0 +1,25 @@
+#Prime Numbers Multiplier | LIXY
+###The application displays a table of multiples for prime first n numbers.
+
+## Starting Application
+### Run 'run.bat' on windows or 'run.sh' on Linux to install the required dependencies and start the application
+
+
+## Usage 
+### / --> Loads up the web page for the first 10 primes numbers
+### To readjust the prime numbers pass in the query parameter of primeNumbers with the required prime number size. e.g /?primeNumbers=12
+
+## Application Architecture
+### Controller
+#### Handles the Business logic
+### Services
+#### Handles the Application Utility
+### Routes
+#### Handles the routing for the application endpoints for ease of scaling
+### Views
+#### Houses the Templates for the UI
+### Public
+#### Houses all static files needed for client side rendering
+### Test
+#### Contains the essential test files for the application logics
+
