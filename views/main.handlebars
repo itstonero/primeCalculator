@@ -1,9 +1,25 @@
 
 {{#if data}} 
-  <ul>
-    {{#each data}}
-      <li>{{this.header}}</li>
-      <li>{{this.values}}</li>
-    {{/each}}
-  </ul>
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col"> </th>
+            {{#each data}}
+                <th scope="col">{{this.header}}</th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data }}
+            <tr>
+            <th scope="row">{{ this.header }}</th>
+                {{#each this.values}}
+                    <td>{{this}}</td>
+                {{/each}}
+            </tr>
+        {{/each}}
+    </tbody>
+    </table>
+{{else}}
+<h1>No Data Computed</h1>
 {{/if}}
